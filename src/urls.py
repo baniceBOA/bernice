@@ -1,6 +1,6 @@
 from  flask import render_template, request, jsonify
 
-from delta import html
+
 from .server import app, db
 from  .model import Post
 
