@@ -1,4 +1,4 @@
-from  flask import render_template, request, jsonify
+from  flask import render_template, request, jsonify, redirect
 
 
 from .server import app, db
@@ -25,11 +25,14 @@ def newblog():
 @app.route('/blog/<postid>', methods=['GET', 'POST'])
 def blog(postid):
     post = Post.query.get(postid)
-    if post.html:
-        blog = post.html
-        return render_template('blog.html', blog=blog)
+    if post:
+        if post.html:
+            blog = post.html
+            return render_template('blog.html', blog=blog)
+        else:
+            return render_template('blog.html', blog='')
     else:
-        return render_template('blog.html', blog='')
+        return redirect('newblog')
 @app.route('/edit/')  
 @app.route('/edit/<postid>', methods=['GET', 'POST'])
 def edit(postid=None):
