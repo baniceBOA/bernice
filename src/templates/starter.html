@@ -1,0 +1,89 @@
+<html>
+    <title>WhatsApp</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/app.js"></script>
+    {% macro chip(text, color='red')%}
+            <span class="bg-{{color}}-100 text-{{color}}-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-{{color}}-900 dark:text-{{color}}-300">{{text}}</span>
+            {% endmacro %}
+
+            {% macro TwoLineIconListItem(text, secondary_text='', tertiary_text='', image_url='')   %}
+                <!---TWOLINEICONLISTITEM THE ICON IS DEFAULT IN THE LEFT-->
+                <div class=" flex flex-row w-full h-20 py-2">
+                    <img src="{{image_url}}" alt=" pic" class=" avatar" >
+                    <div class="flex-col">
+                        <p class="text-xl text-black ">{{text}}</p>
+                        <p class="text-sm text-gray-400">{{secondary_text}}</p>
+                    </div>
+                    <div class="relative">
+                        <div class="float-right right-3 absolute  ">
+                            <p>{{tertiary_text}}</p>
+                        </div>
+
+                    </div>
+                      
+                </div>
+             {% endmacro %}
+    <body class="bg-green-100">
+        <div class="flex flex-row flex-wrap bg-green-900 px-2 mx-auto">
+            <div class="flex">
+                <div class=" text-white px-2 mx-auto text-4xl">WhatsApp</div>
+            </div>
+            <div class="flex-row-reverse ">
+                <span class=" py-3 mx-auto">
+                    <i class="text-sm text-white">CAMERA</i>
+                </span>
+                <span class=" py-3 mx-auto">
+                    <i class="text-sm text-white">SEARCH</i>
+                </span>
+                <span class=" py-3 mx-auto">
+                    <i class="text-sm text-white">DOTS-VERTICAL</i>
+                </span>
+            </div>
+        </div>
+        <div class="grid grid-cols-3">
+            <div class="text-sm bg-cyan-200 w-full  h-2/3">
+                <!---CHATS-->
+                <div class="bg-scroll overflow-y-auto">
+                    <!---CHAT ITEMS-->
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                    {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+
+
+                </div>
+            </div>
+            <div class="text-sm bg-red-500 w-full">
+                <!---GROUPS-->
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+                {{TwoLineIconListItem('Bernice', secondary_text='where are you ', tertiary_text='7:15', image_url='../static/images/23.jpg')}}
+            </div>
+            <div class="text-sm bg-blue-400 w-full">
+                 <!---WHATSAPP-->
+            </div>
+            
+
+             
+           
+
+        </div>
+    </body>

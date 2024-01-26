@@ -1,0 +1,18 @@
+{
+  "name": "spacetolet",
+  "version": "1.0.0",
+  "description": "A simple site that enable users to find space to rent either for Residential or Bussiness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/static/css/input.css -o ./src/static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "flowbite": "^1.6.5"
+  },
+  "author": "BoaSystem",
+  "license": "ISC"
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/quill.snow.css">
+    <link rel="stylesheet" href="../static/css/quill.bubble.css">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.bundle.js"></script>
+    <script src="../static/js/quill.min.js"></script>
+    <title>EDIT BLOG</title>
+</head>
+<body>
+    {% if error %}
+    <div class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert"
+      aria-hidden="true">
+      &times;
+      </button>
+      Warning ! {{message}}.
+     </div>
+    {% endif %}
+    <div id="status"></div>
+    {% if blog %}
+    
+    <div id="document-edit" class="ql-scroll-y" style="height: 400px;">
+      {{blog|safe}}
+        
+    </div>
+    {% endif %}
+    
+    <button class="items-center btn  btn-primary" id="save-btn"> FINISH AND SAVE </button>
+
+<script>
+
+var toolbarOptions = [
+    [{
+      'header': [1, 2, 3, 4, 5, 6, false]
+    }],
+    ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+    ['blockquote', 'code-block'],
+
+    [{
+      'header': 1
+    }, {
+      'header': 2
+    }], // custom button values
+    [{
+      'list': 'ordered'
+    }, {
+      'list': 'bullet'
+    }],
+    [{
+      'script': 'sub'
+    }, {
+      'script': 'super'
+    }], // superscript/subscript
+    [{
+      'indent': '-1'
+    }, {
+      'indent': '+1'
+    }], // outdent/indent
+    [{
+      'direction': 'rtl'
+    }], // text direction
+
+    [{
+      'size': ['small', false, 'large', 'huge']
+    }], // custom dropdown
+
+    [{
+      'color': []
+    }, {
+      'background': []
+    }], // dropdown with defaults from theme
+    [{
+      'font': []
+    }],
+    [{
+      'align': []
+    }],
+    ['link', 'image'],
+
+    ['clean'] // remove formatting button
+  ];
+    var quillEdit = new Quill('#document-edit', {
+        modules: {
+          toolbar: toolbarOptions,
+          
+        },
+        theme: 'snow',
+        placeholder: "Edit Document ...",
+      });
+      $("#save-btn").bind('click', function(){
+          var delta = quillEdit.root.innerHTML;
+          var serial = delta;
+
+            $.post(document.URL, {'post':serial}, function(data){
+              console.log(data)
+              if (data['post'] === 'success'){
+        $("body").append('<div id="alert-btn" class="alert alert-success alert-dismissable"> <button type="button" class="close" data-bs-target="#alert-btn" data-dismiss="alert"aria-hidden="true">&times;</button>editted successfully </div')
+              }
+
+            })
+ })
+ (".alert").alert();
+</script>
+</body>
+</html>
